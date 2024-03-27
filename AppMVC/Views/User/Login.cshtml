@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@{
+    ViewData["Title"] = "Index";
+    var username = TempData["Username"];
+    var checktk = TempData["Check"];
+}
+
+@{
+    if (username != null)
+    {
+        <h4>  Xin chao @username  </h4>
+    }
+    // else
+    // {
+    //     <h4> Ban chua dang nhap </h4>
+    // }
+
+    if (checktk != null)
+    {
+        <h2>
+            @checktk
+        </h2>
+  
+    }
+    else
+    {
+        <h3>
+            
+        </h3>
+    }
+  }
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <form asp-action="Login" method="post" class="border p-4">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            
+            
+                <button type="submit" class="float-end btn btn-primary">Login</button>
+           
+        </form>
+    </div>
+</div>
+
+

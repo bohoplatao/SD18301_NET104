@@ -1,0 +1,126 @@
+﻿@model IEnumerable<AppData.Models.SanPham>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .no-underline {
+        text-decoration: none;
+        color: black;
+    }
+
+    .text {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<h1>Index</h1>
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.TenSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anh_SP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayCapnhat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mota)
+            </td>
+            <td>
+
+                    <img src="@Html.DisplayFor(modelItem => item.Anh_SP)" id="imageFile" width="50%" />
+            </td>
+              
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayCapnhat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+
+<h3 class="text-center text-danger">Sản Phẩm Mới</h3>
+
+<div>
+    <div class="row">
+        <div>
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-6 border border-3 border-secondary">
+                <div class="border border-3 d-flex rounded flex-column m-2">
+                    <div class="border-bottom text-center">
+
+                        <img src="@item.Anh_SP" class="img-fluid" id="imageFile" style="max-width: 100%; height: auto;" />
+                    </div>
+                </div>
+                <div class="d-flex flex-column p-3">
+
+                    <div class="fs-4 mb-2 text-danger text-center">
+                        @item.TenSP
+                    </div>
+                    <div class="fs-4 mb-2 text-center text-success">
+                        @item.Mota
+                    </div>
+                </div>
+                <div class="text-center">
+
+
+
+                    @* @Html.ActionLink("Update", "Update", new { id = item.Id }) | *@
+                   @*  @Html.ActionLink("Detail", "Detail", new {  id=item.Id  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Id }) *@
+
+
+                    <button class="btn btn-warning ">
+                        @Html.ActionLink("Detail", "Detail", new { id = item.Id }, new { @class = "no-underline" })
+                    </button>
+
+                    <button class="btn btn-danger ">
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "text" })
+                    </button>
+                </div>
+
+
+            </div>
+
+
+        }
+    </div>
+</div>

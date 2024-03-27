@@ -1,0 +1,77 @@
+﻿@model AppData.Models.SanPham
+
+@{
+    ViewData["Title"] = "Detail";
+}
+<style>
+    .no-underline {
+        text-decoration: none;
+        color: black;
+    }
+
+    .text {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<h1>Chi tiết User</h1>
+
+<div>
+    <h4>SanPham</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TenSP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mota)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Anh_SP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Anh_SP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayCapnhat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayCapnhat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+        <dd class = "col-sm-10">
+            @if (Model.TrangThai == 1){
+                <span> Con hang</span>
+            }
+            else
+            {
+                <span> Het Hang</span>
+            }
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+    </dl>
+</div>
+<div>
+    <button class="btn btn-warning ">
+        @Html.ActionLink("Update", "Update", new { id = Model.Id }, new { @class = "no-underline" })
+    </button>
+    <a asp-action="Index">
+
+        <button class="btn btn-secondary"> Back to List </button>
+
+    </a>
+</div>

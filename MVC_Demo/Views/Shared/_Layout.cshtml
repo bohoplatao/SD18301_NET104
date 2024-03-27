@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVC_Demo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MVC_Demo.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MVC_Demo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="AboutUs">Về Chúng Tôi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="GotoHome">Về Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Test" asp-action="Index">Trang Test</a>
+                        </li>
+
+
+                       @*  <li class="navbar-nav me-auto mb-2 mb-lg-0 ps-5">
+
+                            <div>
+                                <form class="d-lg-inline-flex ol " role="search">
+
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 800px;">
+                                    <button class="btn btn-outline-warning " type="submit">Search</button>
+                                </form>
+                            </div>
+
+                        </li> *@
+
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <ul class="navbar-nav pe-5 ">
+                        <li class="nav-item">
+                               @*  Icon Gio Hang  *@
+                            @* <a class="nav-link active" style="color: red;" aria-current="page" href="#"><i class="bi bi-cart4"></i></i> </a> *@
+
+                        </li>
+                        <li class="nav-item mx-2">
+
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="mdo"> <i class="bi bi-person-circle"></i> Đăng Nhập</button>
+
+
+                        </li>
+                        <li class="nav-item">
+
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#DangKy">
+                                Đăng Ký
+                            </button>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    @* banner *@
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://xyzsport.net/wp-content/uploads/2023/07/AoBongDa-1.jpg" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="https://xyzsport.net/wp-content/uploads/2023/07/AoBongRo2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://xyzsport.net/wp-content/uploads/2023/07/AoBongChuyen-1.jpg" class="d-block w-100" alt="...">
+            </div>
+           
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    
+
+
+
+
+
+
+    @* banner *@
+
+
+
+
+
+    @* Form login  *@
+
+
+
+                          <!-- From Modal -->
+                               <!-- Modal -->
+                               <div class="modal fade" id="DangKy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Đăng Ký</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="card ">
+
+                                            <div class="card-header fw-semibold">
+                                              <i class="bi bi-person-circle"></i>THÔNG TIN TÀI KHOẢN
+                                            </div>
+              
+                                            <div class="card-body">
+                                                
+                                              <div   class="row g-3">
+                                                <div class="col-md-6">
+                                                  <label for="inputEmail" class="form-label fw-semibold">Email</label>
+                                                  <input type="text" class="form-control" id="inputEmail">
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <label for="inputName4" class="form-label fw-semibold">Họ Và Tên</label>
+                                                  <input type="text" class="form-control" id="inputName4">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="inputAdd" class="form-label fw-semibold">Địa Chỉ</label>
+                                                    <select id="inputAdd" class="form-select">
+                                                      <option selected>Hà Nội</option>
+                                                      <option>Thái Nguyên</option>
+                                                      <option>Huế </option>
+                                                      <option>Hồ Chí Minh</option>
+                                                    </select>
+                                                  </div>
+                                                <div class="col-6">
+                                                  <label for="inputPhone" class="form-label fw-semibold">Số Điện Thoại</label>
+                                                  <input type="text" class="form-control" id="inputPhone" >
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <label for="inputDate" class="form-label fw-semibold">Mật Khẩu</label>
+                                                  <input type="password" class="form-control" id="inputDate">
+                                                </div>
+                            
+                                                <div class="col-md-6">
+                                                  <label for="inputPC" class="form-label fw-semibold">Nhập Lại Mật Khẩu</label>
+                                                  <input type="password" class="form-control" id="inputPC">
+                                                </div>
+              
+                            
+                                
+                                                </div>
+                                                <div class="col-md-12 ms-3 mb-3">
+                                                  <button type="button" class="btn btn-success"> <i class="bi bi-floppy"></i> Đăng Ký </button>
+                                                  <button type="button" class="btn btn-primary"  data-bs-dismiss="modal"> </i> Đăng Ký Bằng  <i class="bi bi-facebook"></i> </button>
+                                                  <button type="button" class="btn btn-danger"  data-bs-dismiss="modal"> <i class="bi bi-stop-fill"></i> Hủy</button>
+                              
+
+                                                </div>
+                                              </div >  
+                          
+                                              <!-- <div class="card-footer fw-semibold ">
+                                                <i class="bi bi-box-arrow-up-left"></i>Vui lòng nhập thông tin cầu thủ
+                                              </div> -->
+                                            </div>
+                                          </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button> -->
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+
+                            <!--  -->
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Đăng Nhập </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Tài khoản :</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                              </div>
+                              <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Mật Khẩu:</label>
+                                <input type="password" class="form-control" id="password">
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary">Đăng Nhập </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    @* Form Login  *@
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+        
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - MVC_Demo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
